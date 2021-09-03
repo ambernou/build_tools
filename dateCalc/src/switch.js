@@ -1,16 +1,14 @@
 import { dateCalcForm } from "./datecalc.js";
+import { timerFormEl } from "./timer.js";
 
 const calcBtnEl = document.getElementById("calcBtn");
 const timerBtnEl = document.getElementById("timerBtn");
-
-const timerFormEl = document.getElementById("timer");
 
 calcBtnEl.addEventListener("click", handleCalcShow);
 
 function handleCalcShow(event) {
     
     event.preventDefault();
-    console.log("123");
     dateCalcForm.classList.toggle("hidden_block");
     dateCalcForm.classList.toggle("show_block");
 }
