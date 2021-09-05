@@ -66,5 +66,12 @@ function handleStartTimer(event) {
         
     }
 
-    setInterval(counter, 1000);
+    let timer = setInterval(counter, 1000);
+    
+    stopBtnEl.addEventListener("click", handleStopTimer);
+
+    function handleStopTimer() {
+        startBtnEl.removeAttribute('disabled');
+        clearInterval(timer);
+    }
 }
