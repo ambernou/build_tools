@@ -1,21 +1,31 @@
 const { resolve } = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
     entry: "./src/main.js",
     output: {
         path: resolve(__dirname, "build"),
-        filename: "main.bundle.js"
+        filename: "main.[contenthash].js"
     },
     module: {
         rules: [
             {
                 test: /\.css/,
-                use: ["style-loader", "css-loader"]
+                use: [MiniCssExtractPlugin.loader, "css-loader"]
             },
             {
-                test: /\.mp3/,
+                test: /\.mp3/i,
                 use: "file-loader"
             }
         ]
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: resolve(__dirname, "index.html")
+        }),
+        new MiniCssExtractPlugin({
+            filename: "[name].[contenthash].css"
+        })
+    ]
 }

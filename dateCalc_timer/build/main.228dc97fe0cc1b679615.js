@@ -56,7 +56,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _datecalc_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./datecalc.js */ \"./src/datecalc.js\");\n/* harmony import */ var _switch_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./switch.js */ \"./src/switch.js\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../style.css */ \"./style.css\");\n\r\n\r\n\n\n//# sourceURL=webpack://datecalc_timer/./src/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _datecalc_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./datecalc.js */ \"./src/datecalc.js\");\n/* harmony import */ var _switch_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./switch.js */ \"./src/switch.js\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../style.css */ \"./style.css\");\n/* harmony import */ var _Sound_22474_mp3__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Sound_22474.mp3 */ \"./Sound_22474.mp3\");\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://datecalc_timer/./src/main.js?");
 
 /***/ }),
 
@@ -87,6 +87,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"formatError\": () => (/* binding */ formatError)\n/* harmony export */ });\nconst formatError = text => `\r\n    <span style=\"color: red;\">\r\n        ${text}\r\n    </span>\r\n`;\n\n//# sourceURL=webpack://datecalc_timer/./src/utils.js?");
+
+/***/ }),
+
+/***/ "./Sound_22474.mp3":
+/*!*************************!*\
+  !*** ./Sound_22474.mp3 ***!
+  \*************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"656ec651fc5f89455d42.mp3\";\n\n//# sourceURL=webpack://datecalc_timer/./Sound_22474.mp3?");
 
 /***/ })
 
@@ -129,6 +139,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -143,6 +165,26 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
 /************************************************************************/
