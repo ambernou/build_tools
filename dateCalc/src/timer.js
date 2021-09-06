@@ -1,7 +1,6 @@
 //import { DateTime } from "./luxon.js";
 //import { counter } from "./timer_counter.js";
 import { formatError } from "./utils.js";
-//import { Howl, Howler } from "../../../howler.js-master/dist/howler.js";
 
 export const timerFormEl = document.getElementById("timer");
 export const timerCounterEl = document.getElementById("timer_counter");
@@ -19,16 +18,15 @@ function handleStartTimer(event) {
     hours = hours.value;
     minutes = minutes.value;
     seconds = seconds.value;
-    console.log(hours, minutes, seconds);
-    
+        
     timerCounterEl.innerHTML = `
     <span> 
         ${hours} : ${minutes} : ${seconds}
     </span>
     `;
     
-    if (seconds == 0) {
-        timerCounterEl.innerHTML = formatError("Для запуска таймера надо заполнить хотя бы секунды");
+    if (seconds == 0 && minutes == 0 && hours == 0) {
+        timerCounterEl.innerHTML = formatError("Для запуска таймера надо заполнить время");
         startBtnEl.removeAttribute('disabled');
     }
     //counter(hours, minutes, seconds);
@@ -59,11 +57,11 @@ function handleStartTimer(event) {
                 ${hours} : ${minutes} : ${seconds}
             </span>
             `;
+        } else {
+            clearInterval(timer);
+            let audio = `<audio autoplay src="Sound_22474.mp3"></audio>`;
+            timerCounterEl.insertAdjacentHTML("beforeend", audio);
         }
-        // } else if (seconds == 0 && minutes == 0) {
-        //      console.log("end!");
-        // }
-        
     }
 
     let timer = setInterval(counter, 1000);
