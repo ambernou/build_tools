@@ -1,6 +1,7 @@
 //import { DateTime } from "./luxon.js";
 //import { counter } from "./timer_counter.js";
 import { formatError } from "./utils.js";
+import sound from "../Sound_22474.mp3";
 
 export const timerFormEl = document.getElementById("timer");
 export const timerCounterEl = document.getElementById("timer_counter");
@@ -12,6 +13,7 @@ timerFormEl.addEventListener("submit", handleStartTimer);
 function handleStartTimer(event) {
     event.preventDefault();
     startBtnEl.setAttribute('disabled', true);
+    stopBtnEl.removeAttribute('disabled');
     timerCounterEl.innerHTML = "";
 
     let { hours, minutes, seconds } = event.target.elements;
@@ -59,8 +61,8 @@ function handleStartTimer(event) {
             `;
         } else {
             clearInterval(timerID);
-            let audio = `<audio autoplay src="Sound_22474.mp3"></audio>`;
-            timerCounterEl.insertAdjacentHTML("beforeend", audio);
+            new Audio(sound).play();
+            startBtnEl.removeAttribute('disabled');
         }
     }
 
@@ -70,6 +72,7 @@ function handleStartTimer(event) {
 
     function handleStopTimer() {
         startBtnEl.removeAttribute('disabled');
+        stopBtnEl.setAttribute('disabled', true);
         clearInterval(timerID);
     }
 }

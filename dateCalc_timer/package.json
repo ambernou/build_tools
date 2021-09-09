@@ -4,8 +4,10 @@
   "description": "",
   "main": "webpack.config.js",
   "dependencies": {
+    "lodash": "^4.17.21",
     "luxon": "^2.0.2",
     "webpack": "^5.52.0",
+    "webpack-bundle-analyzer": "^4.4.2",
     "webpack-cli": "^4.8.0"
   },
   "devDependencies": {

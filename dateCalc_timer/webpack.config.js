@@ -1,6 +1,8 @@
 const { resolve } = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { scryptSync } = require("crypto");
+const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
 module.exports = {
     entry: "./src/main.js",
@@ -16,7 +18,10 @@ module.exports = {
             },
             {
                 test: /\.mp3/i,
-                use: "file-loader"
+                use: "file-loader",
+                // options: {
+                //     name: '[path][name].[ext]'
+                // }
             }
         ]
     },
@@ -26,6 +31,7 @@ module.exports = {
         }),
         new MiniCssExtractPlugin({
             filename: "[name].[contenthash].css"
-        })
+        }),
+        new BundleAnalyzerPlugin(),
     ]
 }
